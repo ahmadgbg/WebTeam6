@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WebTeam6.API.Controllers;
 using WebTeam6.Models;
 
 namespace WebTeam6.API
@@ -29,6 +30,8 @@ namespace WebTeam6.API
         {
             services.AddControllers();
             services.AddDbContext<MainContext>(options => options.UseMySql($"Server=remotemysql.com;Database=Kar4xdXASC;User=Kar4xdXASC;Password=HA1veNjEML"), ServiceLifetime.Transient);
+
+            services.AddScoped<IGroupRepository, GroupRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
