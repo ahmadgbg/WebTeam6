@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebTeam6.Data
+namespace WebTeam6.Models
 
 {
     public class User : IdentityUser

@@ -1,6 +1,7 @@
 ﻿@page "/users"
 
 @inject IUserService service;
+@using WebTeam6.Models;
 
 <h3>User Index</h3>
 <p>Shows all users in database. You can add and delete users. Edit is not implemented</p>
@@ -45,10 +46,10 @@ else
 
 
 @code {
-        List<User> userList = new List<User>();
+    List<User> userList = new List<User>();
 
 
-        User userObject = new User();
+    User userObject = new User();
 
     protected override async Task OnInitializedAsync()
     {

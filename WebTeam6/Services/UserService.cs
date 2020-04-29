@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WebTeam6.Data;
+using WebTeam6.Models;
 
 namespace WebTeam6.Services
 {

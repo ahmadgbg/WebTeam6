@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebTeam6.Data;
+using WebTeam6.Models;
 
 namespace WebTeam6.Services
 {
@@ -43,24 +43,6 @@ namespace WebTeam6.Services
             Console.WriteLine("was null");
             return null;
         }
-
-        //public async Task<Group> Add(Group group, string name)
-        //{
-        //    var ownerId = await _context.Users.FirstAsync(n => n.UserName == name);
-        //    var owner = await _context.Users.FindAsync(ownerId);
-        //    Console.WriteLine(owner);
-        //    if(owner != null)
-        //    {
-        //        Console.WriteLine("was not null");
-        //        group.Owner = owner;
-        //        await _context.Groups.AddAsync(group);
-        //        owner.Groups.Add(group);
-        //        await _context.SaveChangesAsync();
-        //        return group;
-        //    }
-        //    Console.WriteLine("was null");
-        //    return null;
-        //}
 
         public async Task<Group> Delete(int id)
         {

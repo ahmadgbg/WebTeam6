@@ -1,6 +1,7 @@
 ﻿@page  "/groups"
 
 @inject IGroupService service
+@using WebTeam6.Models;
 
 <h3>Index</h3>
 <p>Shows all groups in database. You can add and delete users. Edit is not implemented. Crashes if Owner name has no match in database.</p>
@@ -23,12 +24,12 @@ else
         <tbody>
             @foreach (var groupItem in groupList)
             {
-            <tr>
-                <td>@groupItem.Name</td>
-                <td>@groupItem.Owner?.UserName</td>
-                <td><input id="group-edit-btn" type="button" class="btn btn-primary" value="Edit" /></td>
-                <td><input id="group-delete-btn " type="button" class="btn btn-danger" value="Delete" @onclick="(() => DeleteGroup(groupItem))" /></td>
-            </tr>
+                <tr>
+                    <td>@groupItem.Name</td>
+                    <td>@groupItem.Owner?.UserName</td>
+                    <td><input id="group-edit-btn" type="button" class="btn btn-primary" value="Edit" /></td>
+                    <td><input id="group-delete-btn " type="button" class="btn btn-danger" value="Delete" @onclick="(() => DeleteGroup(groupItem))" /></td>
+                </tr>
             }
         </tbody>
     </table>

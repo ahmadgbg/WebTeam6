@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WebTeam6.Services;
 
-namespace WebTeam6.Data
+namespace WebTeam6.Models
 {
     public class MainContext : IdentityDbContext<User>
     {

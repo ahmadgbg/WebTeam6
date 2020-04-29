@@ -11,11 +11,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebTeam6.Services;
-using WebTeam6.Data;
 using Microsoft.AspNetCore.Identity;
 using WebTeam6.Areas.Identity;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity.UI;
+using WebTeam6.Models;
 
 namespace WebTeam6
 {
@@ -37,26 +37,10 @@ namespace WebTeam6
             services.AddDbContext<MainContext>(options => options.UseMySql($"Server=remotemysql.com;Database=Kar4xdXASC;User=Kar4xdXASC;Password=HA1veNjEML"), ServiceLifetime.Transient);
             services.AddDefaultIdentity<User>()
                 .AddEntityFrameworkStores<MainContext>();
-            
-            //The baddie:
-            //services.AddIdentity<User, IdentityRole>(options => {
-            //    //Add Password and Username requirements here
-            //})
-            //    .AddEntityFrameworkStores<MainContext>()
-            //    .AddDefaultTokenProviders();
 
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<User>>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IGroupService, GroupService>();
-
-
-            //Use this to add redirect depending on situation
-            /*services.ConfigureApplicationCookie(options =>
-            {
-                options.LoginPath = "/Login";
-                options.LogoutPath = "/Logout";
-                options.AccessDeniedPath = "/AccessDenied";
-            });*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
